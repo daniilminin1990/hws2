@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { message0 } from '../HW1'
 import s from './MessageSender.module.css'
 

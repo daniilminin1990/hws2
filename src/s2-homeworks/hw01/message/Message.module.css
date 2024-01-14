@@ -1,17 +1,31 @@
 .message {
-
+  padding-top: 24px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: Montserrat;
 }
 
 .imageAndText {
-
+  display: flex;
+  align-items: end;
+  text-align: right;
 }
 
 .imageAndText img {
-
+  width: 48px;
+  height: 48px;
+  order: 1
 }
 
 .text {
-
+  order: 0;
+  margin-right: 10px;
+  background-color: #06C;
+  border-radius: 8px;
+  padding: 12px 15px;
+  color: #FFF;
 }
 
 .text:after {
@@ -19,13 +33,21 @@
 }
 
 .name {
-
+  margin-right: 8px;
+  margin-bottom: 3px;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .messageText {
-
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .time {
-
+  width: 48px;
+  margin-top: 8px;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 600;
 }
