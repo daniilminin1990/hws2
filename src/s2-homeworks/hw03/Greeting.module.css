@@ -1,4 +1,8 @@
 .greetingForm {
+  color: rgba(0, 0, 0, 0.50);
+font-family: Montserrat;
+font-size: 14px;
+font-weight: 400;
 }
 
 .inputAndButtonContainer {
