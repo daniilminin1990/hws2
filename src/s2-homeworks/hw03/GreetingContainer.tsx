@@ -14,6 +14,7 @@ export const pureAddUser = (name: string, setError: (error: string) => void, set
     // если имя пустое - показать ошибку, иначе - добавить юзера и очистить инпут
     if (name.trim() === '') {
         setError(errorTitle)
+        setName('')
     } else {
         addUserCallback(name);
         setError('')
@@ -45,7 +46,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
 
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
         setName(e.currentTarget.value)
-        setError('') // need to fix
+        error && setError('') // need to fix
 
     }
     const addUser = () => {
