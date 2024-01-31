@@ -3,10 +3,16 @@
     padding-top: 130px;
     width: 1280px;
     margin: 0 auto;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 142.857% */
 }
 
 .hw {
     /* min-height: 510px; */
+
 }
 
 .hwTitle {
