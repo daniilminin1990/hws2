@@ -4,6 +4,7 @@ import React, {
     ChangeEvent,
 } from 'react'
 import s from './SuperSelect.module.css'
+import {log} from "node:util";
 
 type DefaultSelectPropsType = DetailedHTMLProps<
     SelectHTMLAttributes<HTMLSelectElement>,
@@ -23,17 +24,19 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
     ...restProps
 }) => {
     const mappedOptions: any[] = options
-        ? options.map((o) => (
-              <option
-                  id={'hw7-option-' + o.id}
-                  className={s.option}
-                  key={o.id}
-                  value={o.id}
-              >
-                  {o.value}
-              </option>
-          ))
-        : [] // map options with key
+        ? options.map((o) => {
+          return (
+            <option
+              id={'hw7-option-' + o.id}
+              className={s.option}
+              key={o.id}
+              value={o.id}
+            >
+                {o.value}
+            </option>
+          );
+      })
+      : [] // map options with key
 
     const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
         //! делают студенты

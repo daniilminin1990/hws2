@@ -35,38 +35,38 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
     ...restProps
 }) => {
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        // делают студенты
-      console.log(e.currentTarget.checked)
-      console.log(e.currentTarget.value)
-      onChangeOption?.(e.currentTarget.checked)
+        //! делают студенты
+      onChangeOption?.(e.target.value)
     }
 
     const finalRadioClassName = s.radio + (className ? ' ' + className : '')
     const spanClassName = s.span + (spanProps?.className ? ' ' + spanProps.className : '')
 
     const mappedOptions: any[] = options
-        ? options.map((o) => (
-              <label key={name + '-' + o.id} className={s.label}>
-                  <input
-                      id={id + '-input-' + o.id}
-                      className={finalRadioClassName}
-                      type={'radio'}
-                      value={value}
-                      checked={restProps.checked}
-                      name={name}
-                      //! name, checked, value делают студенты
-                      onChange={onChangeCallback}
-                      {...restProps}
-                  />
-                  <span
-                      id={id + '-span-' + o.id}
-                      {...spanProps}
-                      className={spanClassName}
-                  >
+        ? options.map((o) => {
+        return (
+          <label key={name + '-' + o.id} className={s.label}>
+            <input
+              id={id + '-input-' + o.id}
+              className={finalRadioClassName}
+              type={'radio'}
+              //! name, checked, value делают студенты
+              onChange={onChangeCallback}
+              name={name}
+              value={o.id}
+              checked={Number(value) === o.id}
+              {...restProps}
+            />
+            <span
+              id={id + '-span-' + o.id}
+              {...spanProps}
+              className={spanClassName}
+            >
                       {o.value}
                   </span>
-              </label>
-          ))
+          </label>
+        );
+      })
         : []
 
     return <div className={s.options}>{mappedOptions}</div>
