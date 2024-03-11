@@ -1,3 +1,8 @@
 .loader {
     /*свг и/или анимация*/
+    background-image: url('./svg/cloud-fog-svgrepo-com.svg');
+    background-repeat: no-repeat;
+    width: 500px;
+    height: 500px;
+    background-position: center;
 }
