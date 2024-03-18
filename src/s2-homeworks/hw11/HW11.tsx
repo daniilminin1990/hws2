@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import s from './HW11.module.css'
 import s2 from '../../s1-main/App.module.css'
-import { restoreState } from '../hw06/localStorage/localStorage'
+import {restoreState, saveState} from '../hw06/localStorage/localStorage'
 import SuperRange from './common/c7-SuperRange/SuperRange'
 
 /*
@@ -18,13 +18,17 @@ function HW11() {
     const change = (event: Event, value: number | number[]) => {
         // пишет студент // если пришёл массив - сохранить значения в оба useState, иначе в первый
         if (Array.isArray(value)) {
-            setValue2(value[1])
+            saveState('hw11-value1', value[0])
+            saveState('hw11-value2', value[1])
+            setValue1(restoreState('hw11-value1', value1))
+            setValue2(restoreState('hw11-value2', value2))
+            // setValue1(value[0])
+            // setValue2(value[1])
         }
         if (!Array.isArray(value)){
-            setValue1(value)
+            saveState('hw11-value1', value)
+            setValue1(restoreState('hw11-value1', value))
         }
-
-
     }
     console.log(value1)
 
@@ -40,7 +44,7 @@ function HW11() {
                             id={'hw11-single-slider'}
                             // сделать так чтоб value1 изменялось // пишет студент
                             onChange={change}
-
+                            value={value1}
                         />
                     </div>
                     <div className={s.wrapper}>
