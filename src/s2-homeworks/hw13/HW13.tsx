@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import s2 from '../../s1-main/App.module.css'
 import s from './HW13.module.css'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
-import axios from 'axios'
+import axios, {AxiosError, AxiosResponse} from 'axios'
 import success200 from './images/200.svg'
 import error400 from './images/400.svg'
 import error500 from './images/500.svg'
@@ -42,9 +42,21 @@ const HW13 = () => {
       })
       .catch((e) => {
         //! дописать
-        setText(e)
-
+        console.log(e)
+        setText(e.response.data.errorText)
+        setCode(e.response.status)
+        setInfo(e.response.data.info)
+        switch (e.response.status) {
+          case 500: {
+            return setImage(error500)
+          }
+          case 400: {
+            return setImage(error400)
+          }
+          default: setImage(errorUnknown);
+        }
       })
+
   }
 
   return (
