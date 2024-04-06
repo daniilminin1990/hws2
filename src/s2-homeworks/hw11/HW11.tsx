@@ -30,7 +30,6 @@ function HW11() {
             setValue1(restoreState('hw11-value1', value))
         }
     }
-    console.log(value1)
 
     return (
         <div id={'hw11'}>

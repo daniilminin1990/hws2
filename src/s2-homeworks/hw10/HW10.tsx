@@ -17,21 +17,18 @@ import {isObject} from "node:util";
 const HW10 = () => {
   // useSelector, useDispatch // пишет студент
   const isLoading = useSelector<AppStoreType, boolean>(state => state.loading.isLoading)
-  console.log(isLoading)
 
   const dispatch = useDispatch()
   // const isLoading = false
 
   const setLoading = () => { // пишет студент // показать крутилку на 1,5 секунд
     // dispatch
-    console.log(isLoading)
     dispatch(loadingAC(true))
     setTimeout(() => {
       loadingThunkCreator(dispatch)
     }, 1500)
     // setTimeout
   }
-  console.log(isLoading)
 
   return (
     <div id={'hw10'}>

@@ -15,10 +15,24 @@ import errorUnknown from './images/error.svg'
 * */
 
 const HW13 = () => {
-  const [code, setCode] = useState('')
+  const [code, setCode] = useState('Код 200!')
   const [text, setText] = useState('')
   const [info, setInfo] = useState('')
   const [image, setImage] = useState('')
+
+  type ResType = {
+    status: string,
+    data: {
+      errorText: string,
+      info: string
+    }
+  }
+  const foo = (res: any, img: string) => {
+    setText(res.data.errorText)
+    setCode(res.status)
+    setInfo(res.data.info)
+    setImage(img)
+  }
 
   const send = (x?: boolean | null) => () => {
     const url =
@@ -34,26 +48,40 @@ const HW13 = () => {
     axios
       .post(url, {success: x})
       .then((res) => {
-        setCode('Код 200!')
-        setImage(success200)
-        //! дописать
-        setInfo(res.data.info)
+        console.log(res)
+        foo(res, success200)
+        // setCode('Код 200!')
+        // setText(res.data.errorText)
+        // setInfo(res.data.info)
+        // setImage(success200)
 
       })
       .catch((e) => {
         //! дописать
         console.log(e)
-        setText(e.response.data.errorText)
-        setCode(e.response.status)
-        setInfo(e.response.data.info)
-        switch (e.response.status) {
-          case 500: {
-            return setImage(error500)
-          }
-          case 400: {
-            return setImage(error400)
-          }
-          default: setImage(errorUnknown);
+
+        // if (!!e.response.status) {
+        //   setText(e.response.data.errorText)
+        //   setCode(e.response.status)
+        //   setInfo(e.response.data.info)
+        //   e.response.status === 500 ? setImage(error500) : setImage(error400)
+        // } else {
+        //   setInfo(e.message)
+        //   setImage(errorUnknown)
+        //   setText(e.name)
+        //   setCode(e.code)
+        // }
+
+        if (e.response.status === 500) {
+          console.log(e)
+          foo(e.response, error500)
+        } else if (e.response.status === 400) {
+          foo(e.response, error400)
+        } else {
+          setText(e.name)
+          setCode(e.code)
+          setInfo(e.message)
+          setImage(errorUnknown)
         }
       })
 
