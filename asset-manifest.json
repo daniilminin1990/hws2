@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/hws2/static/css/main.d5a3beb2.css",
-    "main.js": "/hws2/static/js/main.ee2a8752.js",
+    "main.css": "/hws2/static/css/main.e8a18302.css",
+    "main.js": "/hws2/static/js/main.e7a32611.js",
     "static/js/787.66cb4309.chunk.js": "/hws2/static/js/787.66cb4309.chunk.js",
     "static/media/avatar.png": "/hws2/static/media/avatar.d947cb9d0d13765666b6.png",
+    "static/media/200.svg": "/hws2/static/media/200.2b4de1542921864a6ecb8c3301ea4670.svg",
     "static/media/404.svg": "/hws2/static/media/404.dae7af4892f2a3abe805a174178919f2.svg",
     "static/media/closeOutline.svg": "/hws2/static/media/closeOutline.91a6693133923612a0702421ab3e9923.svg",
     "static/media/editIcon.svg": "/hws2/static/media/editIcon.11c8e1c42f9a4eae81897d68e091eb42.svg",
@@ -11,12 +12,12 @@
     "index.html": "/hws2/index.html",
     "static/media/burger.svg": "/hws2/static/media/burger.e4e6b98e4ee0b2dfcd76d02a9eed2e34.svg",
     "static/media/cloud-fog-svgrepo-com.svg": "/hws2/static/media/cloud-fog-svgrepo-com.af0171ebd083c0a705cd.svg",
-    "main.d5a3beb2.css.map": "/hws2/static/css/main.d5a3beb2.css.map",
-    "main.ee2a8752.js.map": "/hws2/static/js/main.ee2a8752.js.map",
+    "main.e8a18302.css.map": "/hws2/static/css/main.e8a18302.css.map",
+    "main.e7a32611.js.map": "/hws2/static/js/main.e7a32611.js.map",
     "787.66cb4309.chunk.js.map": "/hws2/static/js/787.66cb4309.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d5a3beb2.css",
-    "static/js/main.ee2a8752.js"
+    "static/css/main.e8a18302.css",
+    "static/js/main.e7a32611.js"
   ]
 }
