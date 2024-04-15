@@ -45,8 +45,8 @@ const HW14 = () => {
         //
         setLoading(false)
       })
-      .finally(() => {
-      })
+      // .finally(() => {
+      // })
   }
 
   const onChangeText = (value: string) => {

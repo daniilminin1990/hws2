@@ -49,40 +49,40 @@ const HW13 = () => {
       .post(url, {success: x})
       .then((res) => {
         console.log(res)
-        foo(res, success200)
-        // setCode('Код 200!')
-        // setText(res.data.errorText)
-        // setInfo(res.data.info)
-        // setImage(success200)
+        // foo(res, success200)
+        setCode('Код 200!')
+        setText(res.data.errorText)
+        setInfo(res.data.info)
+        setImage(success200)
 
       })
       .catch((e) => {
         //! дописать
         console.log(e)
 
-        // if (!!e.response.status) {
-        //   setText(e.response.data.errorText)
-        //   setCode(e.response.status)
-        //   setInfo(e.response.data.info)
-        //   e.response.status === 500 ? setImage(error500) : setImage(error400)
-        // } else {
-        //   setInfo(e.message)
-        //   setImage(errorUnknown)
-        //   setText(e.name)
-        //   setCode(e.code)
-        // }
-
-        if (e.response.status === 500) {
-          console.log(e)
-          foo(e.response, error500)
-        } else if (e.response.status === 400) {
-          foo(e.response, error400)
+        if (!!e.response.status) {
+          setText(e.response.data.errorText)
+          setCode(e.response.status)
+          setInfo(e.response.data.info)
+          e.response.status === 500 ? setImage(error500) : setImage(error400)
         } else {
-          setText(e.name)
-          setCode(e.code)
           setInfo(e.message)
           setImage(errorUnknown)
+          setText(e.name)
+          setCode(e.code)
         }
+
+        // if (e.response.status === 500) {
+        //   console.log(e)
+        //   foo(e.response, error500)
+        // } else if (e.response.status === 400) {
+        //   foo(e.response, error400)
+        // } else {
+        //   setText(e.name)
+        //   setCode(e.code)
+        //   setInfo(e.message)
+        //   setImage(errorUnknown)
+        // }
       })
 
   }
