@@ -106,7 +106,7 @@ const HW15 = () => {
     sendQuery({page: params.page, count: params.count})
     setPage(+params.page || 1)
     setCount(+params.count || 4)
-  }, [page, count])
+  }, [])
 
   const mappedTechs = techs.map(t => (
     <div key={t.id} className={s.row}>
